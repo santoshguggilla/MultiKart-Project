@@ -1,0 +1,15 @@
+<form th:action="@{/probuct/productdetails{id}(id=${productid})}"
+	th:object="${productobject}" method="post"
+	enctype="multipart/form-data">
+	...
+	<div>
+		<label> Photos:</label> <input type="file" name="image"
+			accept="image/png, image/jpeg" />
+
+	</div>
+
+	...
+	<div class="form-group">
+		<button type="submit" class="btn btn-default" th:text="Save"></button>
+	</div>
+</form>

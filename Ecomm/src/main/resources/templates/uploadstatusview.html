@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Uplaod Status</title>
+</head>
+<body>
+  <div th:if="${msg}">
+    <span th:text="${msg}"></span>
+  </div>
+<form th:action="@{/product/saveimage/{id}(id=${session.productsessionid})}" th:object="${productobject}" method="post" >
+<input type="hidden" id="productId" name="productId" th:value="*{productId}"></input>
+<input type="hidden" id="productName" name="productName" th:value="*{productName}"></input>
+<input type="hidden" id="productCode" name="productCode" th:value="*{productCode}"></input>
+<input type="hidden" id="productCompany" name="productCompany" th:value="*{productCompany}"></input>
+<input type="hidden" id="productPrize" name="productPrize" th:value="*{productPrize}"></input>
+<input type="hidden" id="productType" name="productType" th:value="*{productType}"></input>
+<div>
+<input type="text" id="image" name="image" th:value="${Image}"> 
+</div>
+<div class="form-group">
+		<button type="submit" class="btn btn-default" th:text="Save"></button>
+	</div>
+</form>
+</body>
+</html>

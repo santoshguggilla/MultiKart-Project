@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form
+th:action="@{/Dgproducts/uploadImage/{id}(id=${session.productsessionid})}"
+th:object="${productObj}"
+method="post" enctype="multipart/form-data">
+<input type="hidden" id="productId" name="productId"
+th:value="*{productId}"> <input type="file" name="files"
+multiple> <input type="submit" value="Upload Files"></input>
+
+ 
+<input type="hidden" id="productName" name="productName"
+th:value="*{productName}"></input> <input type="hidden"
+id="ProductCode" name="ProductCode" th:value="*{ProductCode}"></input>
+<!-- <input type="hidden" id="vendor" name="vendor" -->
+<!-- th:value="*{vendor}"></input> -->
+ <input type="hidden"
+id="price" name="price" th:value="*{MRPPrice}"></input>
+<input type="hidden" id="productCategory" name="productCategory"
+th:value="*{productCategory}"></input>
+</form>
+</body>
+</html>

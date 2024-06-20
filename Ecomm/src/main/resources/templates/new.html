@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/product/saveData}" th:object="${getdata}" >
+<input type="hidden" id="productId" name="productId" th:value="${productId}"></input>
+<div>
+<input type="text" id="image" name="image" th:value="${session.Images}">
+</div>
+</form>
+</body>
+</html>
